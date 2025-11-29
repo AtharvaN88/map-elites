@@ -13,7 +13,7 @@ def main():
         d_x=d_x,
         fitness_fn=fitness_arm,
         n_cells=200,
-        budget=5000,  # Can increase cells/budget but this is good for testing
+        budget=5000,  # Can increase cells/budget but this is good enough for testing
         rng=42
     )
 
