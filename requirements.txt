@@ -1,0 +1,19 @@
+numpy
+scipy
+scikit-learn
+matplotlib
+pandas
+
+stable-baselines3
+cma
+
+gymnasium
+gymnasium[box2d]
+
+tqdm
+
+# CVT / K-means
+faiss-cpu
+
+# useful for HPC or parallel local runs
+joblib
