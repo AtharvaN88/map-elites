@@ -1,5 +1,5 @@
-from ptme_core import PTME
-from archery import fitness_archery
+from ptme_core.ptme_core import PTME
+from domains.archery import fitness_archery
 import pickle
 
 def main():
