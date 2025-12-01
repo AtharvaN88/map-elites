@@ -15,10 +15,10 @@ def main():
 
     archive, evals = ptme.run()
 
-    with open("archery_archive.pkl", "wb") as f:
+    with open("data/archery/archery_archive.pkl", "wb") as f:
         pickle.dump(archive, f)
 
-    with open("archery_evals.pkl", "wb") as f:
+    with open("data/archery/archery_evals.pkl", "wb") as f:
         pickle.dump(evals, f)
 
     print("Finished archery run:")

@@ -5,7 +5,7 @@ from metrics import multi_resolution_qd
 D_THETA = 10
 
 def main():
-    with open("archery_evals.pkl", "rb") as f:
+    with open("data/archery/archery_evals.pkl", "rb") as f:
         evals = pickle.load(f)
 
     resolutions, qd_scores, mr_qd = multi_resolution_qd(

@@ -1,11 +1,11 @@
 import pickle
 import matplotlib.pyplot as plt
-from metrics import multi_resolution_qd
+from metrics.metrics import multi_resolution_qd
 
 D_THETA = 2  # 10-DoF Arm has 2 task parameters; joint angle and link length
 
 def main():
-    with open("arm_evals.pkl", "rb") as f:
+    with open("data/arm/arm_evals.pkl", "rb") as f:
         evals = pickle.load(f)
 
     resolutions, qd_scores, mr_qd = multi_resolution_qd(

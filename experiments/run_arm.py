@@ -1,5 +1,5 @@
-from ptme_core import PTME
-from arm_10dof import fitness_arm
+from ptme_core.ptme_core import PTME
+from domains.arm_10dof import fitness_arm
 import numpy as np
 import pickle
 
@@ -20,10 +20,10 @@ def main():
     archive, evaluations = ptme.run()
 
     # Save results
-    with open("arm_archive.pkl", "wb") as f:
+    with open("data/arm/arm_archive.pkl", "wb") as f:
         pickle.dump(archive, f)
 
-    with open("arm_evals.pkl", "wb") as f:
+    with open("data/arm/arm_evals.pkl", "wb") as f:
         pickle.dump(evaluations, f)
 
     print("Done! Archive size:", len(archive))
