@@ -3,17 +3,24 @@ scipy
 scikit-learn
 matplotlib
 pandas
+tqdm
 
 stable-baselines3
 cma
 
 gymnasium
-gymnasium[box2d]
 
-tqdm
+# Box2D engine (working WSL-friendly fork)
+box2d==2.3.10
+pygame
+
 
 # CVT / K-means
 faiss-cpu
 
 # useful for HPC or parallel local runs
 joblib
+
+# Video rendering
+imageio
+imageio-ffmpeg
