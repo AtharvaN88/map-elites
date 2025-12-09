@@ -28,6 +28,8 @@ map-elites/
     run_archery.py        # Run PT-ME on the Archery domain
     run_biped.py          # Run PT-ME on the Biped domain
     compute_arm_qd.py     # Compute QD / MR-QD for the Arm domain
+    compute_archer_qd.py  # Compute QD / MR-QD for the Archery domain
+    render_biped.py       # Renders a video of the biped; episode length and other parameters can be changed in this file
     __init__.py
 
   metrics/
