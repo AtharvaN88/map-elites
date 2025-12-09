@@ -73,6 +73,8 @@ Key dependencies include:
 * `imageio`, `imageio-ffmpeg` (video export)
 * `stable-baselines3`, `cma` (optional baselines)
 
+In the end however, I found UV package manager to work best and resolve dependency issues better.
+
 ---
 
 ## Running Experiments
