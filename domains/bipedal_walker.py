@@ -17,8 +17,7 @@ class BipedalDomain:
         friction = 0.4 + theta[1] * 0.6       # [0.4, 1.0]
 
         # Configure terrain physics
-        self.env.unwrapped.hull.omega = 0     # wipe noise
-        self.env.unwrapped.world.gravity = (0, -9.8)
+        # self.env.unwrapped.world.gravity = (0, -9.8)
         self.env.unwrapped.world.ground_friction = friction
 
         # Reset environment
@@ -26,6 +25,8 @@ class BipedalDomain:
         self.state = state
         self.t = 0.0
         return state
+
+    
 
     def step_cpg(self, x, dt=0.03):
         """
@@ -41,7 +42,13 @@ class BipedalDomain:
         out = A * np.sin(2*np.pi*f*self.t + P) + B
         out = np.clip(out, -1, 1)
 
-        obs, reward, done, trunc, info = self.env.step(out)
-        self.state = obs
+        obs, reward, terminated, truncated, info = self.env.step(out)
 
-        return obs, reward, done, trunc
+        done = terminated or truncated
+        
+        return obs, reward, done, info
+
+
+
+    def close(self):
+        self.env.close()

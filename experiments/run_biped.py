@@ -18,7 +18,9 @@ def fitness_biped(x, theta):
 
     # Normalize reward to [0,1]
     f = np.tanh(total_reward / 100)
-    return float(max(0.0, f))
+    f = (f + 1.0) / 2.0   # maps [-1,1] → [0,1]
+    env.close()
+    return float(f)
 
 def main():
 
