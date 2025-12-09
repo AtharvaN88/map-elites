@@ -14,35 +14,38 @@ The project recreates the core PT-ME algorithm from scratch in Python, reproduce
 map-elites/
 │
 ├── ptme_core/
-│ ├── ptme_core.py # Core PT-ME algorithm: CVT, SBX, regression operator, archive
+│ ├── ptme_core.py # Core PT-ME algorithm (CVT archive, SBX + tournament, regression operator)
 │ └── init.py
 │
 ├── domains/
-│ ├── arm_10dof.py # 10-DoF Arm fitness function & kinematics
-│ ├── archery.py # Ballistic archery domain
-│ ├── bipedal_walker.py # BipedWalker-v3 wrapper + CPG controller
+│ ├── arm_10dof.py # 10-DoF Arm forward-kinematics + fitness
+│ ├── archery.py # Archery projectile simulation + reward
+│ ├── bipedal_walker.py # Wrapper for BipedWalker-v3 + CPG controller
 │ └── init.py
 │
 ├── experiments/
-│ ├── run_arm.py # Runs PT-ME on the Arm domain
-│ ├── run_archery.py # Runs PT-ME on the Archery domain
-│ ├── run_biped.py # Runs PT-ME on BipedWalker
-│ ├── compute_arm_qd.py # QD + Multi-Resolution QD scoring (Arm)
+│ ├── run_arm.py # Run PT-ME on Arm
+│ ├── run_archery.py # Run PT-ME on Archery
+│ ├── run_biped.py # Run PT-ME on Biped
+│ ├── compute_arm_qd.py # Compute QD & MR-QD metrics using eval logs
 │ └── init.py
 │
 ├── metrics/
-│ ├── metrics.py # QD-Score & MR-QD-Score implementation
+│ ├── metrics.py # QD-Score and Multi-Resolution QD implementation
 │ └── init.py
 │
 ├── plots/
-│ ├── plot_arm.py # Task-space scatter plot for Arm archive
-│ ├── plot_archery.py # Task-space scatter plot for Archery archive
-│ ├── plot_biped.py # Task-space scatter plot for Biped archive
+│ ├── plot_arm.py # Visualize Arm archive in task space
+│ ├── plot_archery.py # Visualize Archery archive
+│ ├── plot_biped.py # Visualize Biped archive
 │ └── init.py
 │
 ├── data/
-│ ├── arm/ # Archive + eval logs for Arm runs
-│ ├── archery/ # Archive + eval logs for Archery runs
-│ └── biped/ # Archive + eval logs for Biped runs
+│ ├── arm/ # Saved archives + eval logs for Arm experiments
+│ ├── archery/ # Archives + logs for Archery
+│ └── biped/ # Archives + logs for Biped
 │
-└── requirements.txt # Python environment dependencies
+├── videos/ # (Generated) BipedWalker rollout videos
+│
+├── requirements.txt # Environment setup
+└── README.md
